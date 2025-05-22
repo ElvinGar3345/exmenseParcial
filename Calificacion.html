@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valoración con Estrellas</title> 
+</head>
+<link rel="stylesheet" href="CSS/style.css">
+<body>
+
+<div id="encabezado">
+		<div >
+		<nav>
+           
+		<ul class="menu">
+			<li><a href="">Menu </a>
+				<ul>
+        <li><a href="Principal.html">Inicio</a></li>
+        <li><a href="Historia.html">Historia</a> </li>
+        <li><a href="Mitos.html">Mitos</a></li>
+        <li><a href="Mapas.html">Mapas</a></li>
+        <li><a href="Video.html">video</video></a></li>
+        <li><a href="Contacto.html">Contacto</a></li> 
+        <li><a href="AntonioL.html">AntonioL</a></li>
+        <li><a href="WilliamB.html">WilliamT</a></li>
+        <li><a href="JamesB.html">JamesB</a></li>
+        <li><a href="DavidC.html">DavidC</a></li>
+        <li><a href="Index.html">Cerrar Sesion</a></li>
+				</ul>
+
+			</li>
+		</ul>
+		
+		</nav>
+	</div>
+</div>
+
+
+
+<div class="container">
+    <header>
+         <div class="logo">
+            <img src="ITH.png" alt="ITH">
+        </div> 
+        <h1>Instituto Técnico Honduras</h1>
+    </header>
+
+    <section>
+       <center><h2>¿Que te parecio el contenido? <br> ¿Te a gustado Háznoslo saber ?</h2></center> 
+    </section>
+    
+<center>
+    <div class="rating-box">
+        <h2>Valora este contenido</h2>
+        <div class="stars">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+        <p id="rating-value">Selecciona tu calificación</p>
+        <button class="submit-btn">Enviar Calificación</button>
+    </div>
+
+    <script>
+        const stars = document.querySelectorAll('.star');
+        const ratingValue = document.getElementById('rating-value');
+        const submitBtn = document.querySelector('.submit-btn');
+        let selectedRating = 0;
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                selectedRating = star.getAttribute('data-value');
+
+                stars.forEach(s => s.classList.remove('active'));
+                for (let i = 0; i < selectedRating; i++) {
+                    stars[i].classList.add('active');
+                }
+
+                ratingValue.textContent = `Calificación: ${selectedRating} estrellas`;
+            });
+        });
+
+        submitBtn.addEventListener('click', () => {
+            if (selectedRating > 0) {
+                alert(`¡Gracias por tu valoración de ${selectedRating} estrellas!`);
+             
+            } else {
+                alert("Por favor, selecciona una calificación antes de enviar.");
+            }
+        });
+    </script>
+</center>
+    
+    <section>
+       
+    </section>
+<br>
+<br>
+    <footer>
+        <p>© 2025 Elvin Alexander Garcia | Dominio Publico ;)</p>
+        <marquee diretion="rigth"><p>si tiene alguna duda o consulta porfavor comuniquese con nosotros </p></marquee>
+    </footer>
+</div>
+
+
+
+</body>
+</html>
